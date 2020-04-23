@@ -1,10 +1,13 @@
 package com.maycon.minhasfinancas.services.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.maycon.minhasfinancas.exceptions.RegraNegocioException;
 import com.maycon.minhasfinancas.model.entities.Usuario;
 import com.maycon.minhasfinancas.repositories.UsuarioRepository;
 import com.maycon.minhasfinancas.services.UsuarioService;
 
+@Service
 public class UsuarioServiceImpl implements UsuarioService{
 
 	private UsuarioRepository repository;
