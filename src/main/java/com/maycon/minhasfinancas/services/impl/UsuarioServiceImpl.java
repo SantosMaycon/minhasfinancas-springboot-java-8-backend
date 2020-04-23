@@ -1,6 +1,7 @@
 package com.maycon.minhasfinancas.services.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.maycon.minhasfinancas.exceptions.RegraNegocioException;
 import com.maycon.minhasfinancas.model.entities.Usuario;
@@ -23,9 +24,10 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public Usuario salvarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+	@Transactional
+	public Usuario salvarUsuario(Usuario usuario) {		
+		validarEmail(usuario.getEmail());
+		return repository.save(usuario);
 	}
 
 	@Override

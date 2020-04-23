@@ -43,5 +43,4 @@ public class UsuarioServiceTest {
 			service.validarEmail("email@mail.com");
 		});
 	}
-	
 }
